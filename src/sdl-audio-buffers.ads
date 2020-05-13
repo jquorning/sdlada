@@ -21,8 +21,6 @@
 --  SDL.Audio.Buffers
 --------------------------------------------------------------------------------------------------------------------
 
-with SDL.Audio.Conversions;
-
 package SDL.Audio.Buffers is
 
    function To_Buffer (Audio_Buf : in Buffer_Base;
