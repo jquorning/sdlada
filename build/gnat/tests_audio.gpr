@@ -1,0 +1,36 @@
+--
+--
+
+with "sdlada.gpr";
+
+project Tests_Audio is
+
+  for Languages    use ("Ada");
+  for Source_Dirs  use ("../../test/audio/");
+  for Object_Dir   use "gen/object/";
+  for Exec_Dir     use "gen/binary/";
+  for Main         use ("inspection.adb",
+                        "audiostream.adb",
+                        "play_wav.adb",
+                        "play_cb.adb",
+                        "capture.adb");
+
+  for Create_Missing_Dirs use "True";
+
+  package Builder is
+
+     for Default_Switches ("Ada") use
+       ("-g",
+        "-gnateE",
+        "-gnatf",
+        "-gnatwa",
+        "-gnatwj",
+        "-gnatw.x",
+        "-gnat2012",
+        "-gnaty",
+        "-gnatyM99"
+       );
+
+  end Builder;
+
+end Tests_Audio;
