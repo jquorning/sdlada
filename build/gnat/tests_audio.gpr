@@ -13,7 +13,8 @@ project Tests_Audio is
                         "audiostream.adb",
                         "play_wav.adb",
                         "play_cb.adb",
-                        "capture.adb");
+                        "capture.adb",
+                        "conversion.adb");
 
   for Create_Missing_Dirs use "True";
 
