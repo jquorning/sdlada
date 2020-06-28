@@ -139,20 +139,22 @@ package body SDL.Audio is
          Desired         : in     Audio_Spec;
          Obtained        :    out Audio_Spec;
          Allowed_Changes : in     C.int)
-        return Device_Id with
+        return C.int with
         Import        => True,
         Convention    => C,
         External_Name => "SDL_OpenAudioDevice";
-   begin
-      Device := SDL_Open_Audio_Device
+
+      Result : constant C.int := SDL_Open_Audio_Device
         (Device_Name    => New_String (Device_Name),
          Is_Capture      => (if Is_Capture then 1 else 0),
          Desired         => Desired,
          Obtained        => Obtained,
          Allowed_Changes => C.int (Allowed_Changes));
-      if Device <= 0 then
+   begin
+      if Result <= 0 then
          raise Audio_Error with SDL.Error.Get;
       end if;
+      Device := Device_Id (Result);
    end Open;
 
    function Status return Status_Type is
