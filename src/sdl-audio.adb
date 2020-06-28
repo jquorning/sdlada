@@ -92,7 +92,6 @@ package body SDL.Audio is
         Convention    => C,
         External_Name => "SDL_OpenAudio";
 
-      Ob_Access : Spec_Access := null;
       Result : constant C.int := SDL_Open_Audio (Desired, Obtained);
    begin
       if Result /= SDL.Success then
