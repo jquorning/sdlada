@@ -84,7 +84,6 @@ package body SDL.Audio is
    procedure Open (Desired  : in     Audio_Spec;
                    Obtained :    out Audio_Spec)
    is
-      type Spec_Access is access all Audio_Spec;
       function SDL_Open_Audio (Desired  : in     Audio_Spec;
                                Obtained :    out Audio_Spec)
                               return C.int with
