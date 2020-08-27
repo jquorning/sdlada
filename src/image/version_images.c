@@ -21,13 +21,16 @@
  *    distribution.
  **********************************************************************************************************************/
 #ifdef __APPLE__
-#include <SDL2_image/SDL_image.h>
+//#include <SDL2_image/SDL_image.h>
 #else
 #include <SDL_image.h>
 #endif
 
 /* We need to define some constants here so we can get access to the values that in #define form from Ada.
  */
-const Uint8 SDL_Ada_Image_Major_Version = SDL_IMAGE_MAJOR_VERSION;
-const Uint8 SDL_Ada_Image_Minor_Version = SDL_IMAGE_MINOR_VERSION;
-const Uint8 SDL_Ada_Image_Patch_Version = SDL_IMAGE_PATCHLEVEL;
+const unsigned char SDL_Ada_Image_Major_Version = 88;
+const unsigned char SDL_Ada_Image_Minor_Version = 88;
+const unsigned char SDL_Ada_Image_Patch_Version = 88;
+//const Uint8 SDL_Ada_Image_Major_Version = SDL_IMAGE_MAJOR_VERSION;
+//const Uint8 SDL_Ada_Image_Minor_Version = SDL_IMAGE_MINOR_VERSION;
+//const Uint8 SDL_Ada_Image_Patch_Version = SDL_IMAGE_PATCHLEVEL;
